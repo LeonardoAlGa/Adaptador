@@ -30,11 +30,11 @@ class MainActivity : AppCompatActivity() {
     }
     fun getNews(): List<Noticia>{
         val noticias = listOf(Noticia("Título 1", "Descripcion 1"),
-            Noticia("Título 1", "Descripcion 2"),
-            Noticia("Título 1", "Descripcion 3"),
-            Noticia("Título 1", "Descripcion 4"),
-            Noticia("Título 1", "Descripcion 5"),
-            Noticia("Título 1", "Descripcion 6"))
+            Noticia("Título 2", "Descripcion 2"),
+            Noticia("Título 3", "Descripcion 3"),
+            Noticia("Título 4", "Descripcion 4"),
+            Noticia("Título 5", "Descripcion 5"),
+            Noticia("Título 6", "Descripcion 6"))
         return noticias
             }
 }
