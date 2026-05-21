@@ -27,8 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.rvwNews.layoutManager = LinearLayoutManager(this)
         binding.rvwNews.adapter = NoticiaAdapter(getNews(),
-            onNoticiaClicked = { noticia -> Toast.makeText(this, "Click en ${noticia.title}", Toast.LENGTH_SHORT).show()}")
-
+            onNoticiaClicked = { noticia -> Toast.makeText(this, "Click en ${noticia.title}", Toast.LENGTH_SHORT).show()})
     }
     fun getNews(): List<Noticia>{
 
