@@ -8,6 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.adaptador.databinding.ActivityMainBinding
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,16 +26,18 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.rvwNews.layoutManager = LinearLayoutManager(this)
-        binding.rvwNews.adapter = NoticiaAdapter(getNews())
+        binding.rvwNews.adapter = NoticiaAdapter(getNews(),
+            onNoticiaClicked = { noticia -> Toast.makeText(this, "Click en ${noticia.title}", Toast.LENGTH_SHORT).show()}")
 
     }
     fun getNews(): List<Noticia>{
-        val noticias = listOf(Noticia("Título 1", "Descripcion 1"),
-            Noticia("Título 2", "Descripcion 2"),
-            Noticia("Título 3", "Descripcion 3"),
-            Noticia("Título 4", "Descripcion 4"),
-            Noticia("Título 5", "Descripcion 5"),
-            Noticia("Título 6", "Descripcion 6"))
+
+        val noticias = mutableListOf<Noticia>()
+
+        for (i in 1..50){
+            noticias.add(Noticia("Noticia $i", "Descripción de la noticia $i"))
+        }
+
         return noticias
             }
 }
